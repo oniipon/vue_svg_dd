@@ -1,11 +1,9 @@
 <template>
   <div class="svg">
     <!--<h1>{{ msg }}</h1>-->
-    <svg :height="height" @mousemove="move($event)" :width="width">
+    <svg :height="height" @mousemove="fuga($event)" :width="width">
       <circle id="hogefuga" r="50
-      " :cx="circleX" :cy="circleY"
-      @mouseup="dragFlag=false"
-      @mousedown="dragFlag=true">
+      " :cx="circleX" :cy="circleY">
       </circle>
     </svg>
 
@@ -14,6 +12,7 @@
 
 <script>
 import Hammer from 'hammerjs'
+
 export default {
   name: 'HelloWorld',
   data: function () {
@@ -41,8 +40,9 @@ export default {
       console.dir(event)
       // this.circleX = event.center.x
       // this.circleY = event.center.y
-      this.circleX = event.offsetX
-      this.circleY = event.offsetY
+      const svgPosition = document.getElementsByTagName('svg')[0].getBoundingClientRect()
+      this.circleX = event.center.x - svgPosition.x
+      this.circleY = event.center.y - svgPosition.y
     },
     fuga: function (event) {
       // console.dir(event)
@@ -51,10 +51,10 @@ export default {
   mounted () {
     const circle = document.getElementById('hogefuga')
     const hammerCircle = new Hammer(circle)
-    // hammerCircle.on('pan', this.hoge)
+    hammerCircle.on('pan', this.hoge)
     const svg = document.getElementsByTagName('svg')[0]
     const hammerSvg = new Hammer(svg)
-    // hammerSvg.on('pan', this.move)
+    hammerSvg.on('pan', this.move)
   }
 }
 </script>
@@ -63,5 +63,6 @@ export default {
 <style scoped>
   svg {
     background-color: blue;
+    margin: 100px;
   }
 </style>
