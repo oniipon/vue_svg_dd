@@ -14,8 +14,8 @@
     </div>
 
     <div class="input-range">
-      <input v-model="rx" type="range" step="0.1">
-      <input v-model="ry" type="range" step="0.1">
+      <input v-model="rx" type="range" step="3.65">
+      <input v-model="ry" type="range" step="3.65">
     </div>
   </div>
 </template>
