@@ -9,13 +9,13 @@
       </ellipse>
     </svg>
     <div class="input-text">
-      <input v-model="rx" type="text">
-      <input v-model="ry" type="text">
+      <input v-model="rx" type="number">
+      <input v-model="ry" type="number">
     </div>
 
     <div class="input-range">
-      <input v-model="rx" type="range">
-      <input v-model="ry" type="range">
+      <input v-model="rx" type="range" step="0.1">
+      <input v-model="ry" type="range" step="0.1">
     </div>
   </div>
 </template>
