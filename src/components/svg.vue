@@ -8,9 +8,15 @@
       <ellipse id="hogefuga" :rx="rx" :ry="ry" :cx="circleX" :cy="circleY">
       </ellipse>
     </svg>
+    <div class="input-text">
+      <input v-model="rx" type="text">
+      <input v-model="ry" type="text">
+    </div>
 
-    <input v-model="rx" type="range">
-    <input v-model="ry" type="range">
+    <div class="input-range">
+      <input v-model="rx" type="range">
+      <input v-model="ry" type="range">
+    </div>
   </div>
 </template>
 
@@ -26,8 +32,8 @@ export default {
       height: 300,
       circleX: 150,
       circleY: 150,
-      rx: 50,
-      ry: 50,
+      rx: 50.0,
+      ry: 50.0,
       dragFlag: false
     }
   },
@@ -72,5 +78,10 @@ export default {
   svg {
     background-color: blue;
     margin: 100px;
+    display: flex;
+  }
+
+  .input-text{
+    flex: 2;
   }
 </style>
