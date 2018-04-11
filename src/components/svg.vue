@@ -9,8 +9,8 @@
       </ellipse>
     </svg>
     <div class="input-text">
-      <input v-model="rx" type="number">
-      <input v-model="ry" type="number">
+      <label> {{rx}} </label>
+      <label> {{ry}} </label>
     </div>
 
     <div class="input-range">
@@ -83,5 +83,9 @@ export default {
 
   .input-text{
     flex: 2;
+  }
+
+  label{
+    margin: 60px;
   }
 </style>
