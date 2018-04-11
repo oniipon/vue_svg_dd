@@ -2,10 +2,15 @@
   <div class="svg">
     <!--<h1>{{ msg }}</h1>-->
     <svg :height="height" @mousemove="fuga($event)" :width="width">
-      <circle id="hogefuga" r="50
-      " :cx="circleX" :cy="circleY">
-      </circle>
+      <!--<circle id="hogefuga" r="50-->
+      <!--" :cx="circleX" :cy="circleY">-->
+      <!--</circle>-->
+      <ellipse id="hogefuga" :rx="rx" :ry="ry" :cx="circleX" :cy="circleY">
+      </ellipse>
     </svg>
+
+    <input v-model="rx"  type="range">
+    <input v-model="ry"  type="range">
 
   </div>
 </template>
@@ -22,6 +27,8 @@ export default {
       height: 800,
       circleX: 300,
       circleY: 300,
+      rx: 100,
+      ry: 100,
       dragFlag: false
     }
   },
@@ -40,7 +47,9 @@ export default {
       console.dir(event)
       // this.circleX = event.center.x
       // this.circleY = event.center.y
-      const svgPosition = document.getElementsByTagName('svg')[0].getBoundingClientRect()
+      const svgPosition = document
+        .getElementsByTagName('svg')[0]
+        .getBoundingClientRect()
       this.circleX = event.center.x - svgPosition.x
       this.circleY = event.center.y - svgPosition.y
     },
@@ -61,8 +70,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  svg {
-    background-color: blue;
-    margin: 100px;
-  }
+svg {
+  background-color: blue;
+  margin: 100px;
+}
 </style>
