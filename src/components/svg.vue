@@ -9,9 +9,8 @@
       </ellipse>
     </svg>
 
-    <input v-model="rx"  type="range">
-    <input v-model="ry"  type="range">
-
+    <input v-model="rx" type="range">
+    <input v-model="ry" type="range">
   </div>
 </template>
 
@@ -23,12 +22,12 @@ export default {
   data: function () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      width: 800,
-      height: 800,
-      circleX: 300,
-      circleY: 300,
-      rx: 100,
-      ry: 100,
+      width: 300,
+      height: 300,
+      circleX: 150,
+      circleY: 150,
+      rx: 50,
+      ry: 50,
       dragFlag: false
     }
   },
@@ -70,8 +69,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-svg {
-  background-color: blue;
-  margin: 100px;
-}
+  svg {
+    background-color: blue;
+    margin: 100px;
+  }
 </style>
