@@ -9,13 +9,14 @@
       </ellipse>
     </svg>
     <div class="input-text">
-      <label> {{rx}} </label>
-      <label> {{ry}} </label>
+      <label>横 {{ry}} (半径cm)</label>
+      <input v-model="ry" type="range" step="3.65">
+
     </div>
 
     <div class="input-range">
+      <label>縦 {{rx}} (半径cm) </label>
       <input v-model="rx" type="range" step="3.65">
-      <input v-model="ry" type="range" step="3.65">
     </div>
   </div>
 </template>
